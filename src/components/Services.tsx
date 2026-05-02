@@ -55,7 +55,7 @@ export function Services() {
           </Reveal>
         </div>
 
-        <div ref={gridRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={gridRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.06}>
               <article
