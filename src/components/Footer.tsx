@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowUp, Sparkles } from "lucide-react";
+import logo from "../assets/exavia.jpeg";
 
 export function Footer() {
   const [show, setShow] = useState(false);
@@ -11,13 +12,14 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border/40 px-6 py-14">
-      <div className="mx-auto max-w-[1200px] grid gap-10 md:grid-cols-4">
+      <div className="mx-auto max-w-[1200px] grid gap-10 md:grid-cols-5">
         <div className="md:col-span-2">
           <a href="#home" className="flex items-center gap-2 font-extrabold text-lg">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-white">
-              <Sparkles className="h-4 w-4" />
-            </span>
-            Nova<span className="text-gradient-brand">.</span>
+              {/* <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-white">
+                <Sparkles className="h-4 w-4" />
+              </span>
+              Nova<span className="text-gradient-brand">.</span> */}
+              <img src={logo} alt="Nova Logo" className="h-14 w-14 rounded-lg" />
           </a>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             A digital marketing agency engineering measurable growth for ambitious brands worldwide.
@@ -29,6 +31,10 @@ export function Footer() {
           { label: "Work", href: "#work" },
           { label: "Contact", href: "#contact" },
         ]} />
+        <FooterCol title="NEW BUSINESS" items={[
+          { label: "exavia.co@gmail.com", href: "mailto:exavia.co@gmail.com" },
+          { label: "+91 90037 21577", href: "tel:+919003721577" },
+        ]} />
         <FooterCol title="Services" items={[
           { label: "SEO", href: "#services" },
           { label: "Social", href: "#services" },
@@ -37,7 +43,7 @@ export function Footer() {
         ]} />
       </div>
       <div className="mx-auto max-w-[1200px] mt-10 pt-6 border-t border-border/40 flex flex-col md:flex-row gap-3 items-center justify-between text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Nova Agency. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Exavia Agency. All rights reserved.</p>
         <p>Made with care · <span className="text-gradient-brand font-semibold">Grow boldly</span></p>
       </div>
 

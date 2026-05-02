@@ -29,10 +29,6 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_85%)]" />
 
       <div className="mx-auto w-full max-w-[1200px] px-6">
-        <span className="hero-eyebrow inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-muted-foreground">
-          <span className="h-1.5 w-1.5 rounded-full bg-gradient-brand" />
-          Award-winning digital marketing agency
-        </span>
 
         <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95]">
           <span className="hero-word inline-block mr-3">We</span>
@@ -48,7 +44,8 @@ export function Hero() {
           into customers — and customers into fans.
         </p>
 
-        <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
+        <div className="hero-cta mt-10 flex  items-center gap-4">
+          
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 font-semibold text-white glow-brand transition-transform hover:scale-[1.03]"
@@ -58,7 +55,7 @@ export function Hero() {
           </a>
           <a
             href="#services"
-            className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 font-semibold hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 font-semibold hover:bg-black/6 transition-colors"
           >
             <Play className="h-4 w-4" />
             View Services

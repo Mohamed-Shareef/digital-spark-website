@@ -3,6 +3,7 @@ import { z } from "zod";
 import { Reveal } from "./Reveal";
 import { toast } from "sonner";
 import { Instagram, Linkedin, Twitter, Mail, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
@@ -62,8 +63,8 @@ export function Contact() {
               {[
                 { Icon: Instagram, href: "#", label: "Instagram" },
                 { Icon: Linkedin, href: "#", label: "LinkedIn" },
-                { Icon: Twitter, href: "#", label: "Twitter" },
-                { Icon: Mail, href: "mailto:hello@nova.agency", label: "Email" },
+                { Icon: FaWhatsapp, href: "https://wa.me/919003721577⁠", label: "WhatsApp" },    
+                { Icon: Mail, href: "mailto:exavia.co@gmail.com", label: "Email" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}

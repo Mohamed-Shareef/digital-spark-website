@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "../assets/exavia.jpeg";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -49,14 +50,15 @@ export function Navbar() {
       )}
     >
       <nav
-        className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4"
+        className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-2"
         aria-label="Primary"
       >
-        <a href="#home" className="flex items-center gap-2 font-extrabold text-lg">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-white">
+        <a href="#home" className="flex items-center  font-extrabold text-lg">
+          {/* <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-white">
             <Sparkles className="h-4 w-4" />
           </span>
-          <span>Nova<span className="text-gradient-brand">.</span></span>
+          <span>Nova<span className="text-gradient-brand">.</span></span> */}
+          <img src={logo} alt="Nova Logo" className="h-15 w-15 md:h-13 md:w-13 rounded-lg object-cover" />
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
