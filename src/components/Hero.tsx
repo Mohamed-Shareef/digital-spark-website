@@ -44,8 +44,7 @@ export function Hero() {
           into customers — and customers into fans.
         </p>
 
-        <div className="hero-cta mt-10 flex  items-center gap-4">
-          
+        <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 font-semibold text-white glow-brand transition-transform hover:scale-[1.03]"
