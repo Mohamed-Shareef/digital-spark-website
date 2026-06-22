@@ -61,14 +61,32 @@ export function Contact() {
           <Reveal delay={0.15}>
             <div className="mt-8 flex items-center gap-3">
               {[
-                { Icon: Instagram, href: "#", label: "Instagram" },
-                { Icon: Linkedin, href: "#", label: "LinkedIn" },
-                { Icon: FaWhatsapp, href: "https://wa.me/919003721577⁠", label: "WhatsApp" },    
-                { Icon: Mail, href: "mailto:exavia.co@gmail.com", label: "Email" },
+                {
+                  Icon: Instagram,
+                  href: "https://instagram.com",
+                  label: "Instagram",
+                },
+                {
+                  Icon: Linkedin,
+                  href: "https://linkedin.com",
+                  label: "LinkedIn",
+                },
+                {
+                  Icon: FaWhatsapp,
+                  href: "https://wa.me/919003721577?text=Hello%20Exavia",
+                  label: "WhatsApp",
+                },
+                {
+                  Icon: Mail,
+                  href: "https://mail.google.com/mail/?view=cm&fs=1&to=exavia.co@gmail.com",
+                  label: "Email",
+                },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="grid h-11 w-11 place-items-center rounded-full glass hover:bg-white/10 transition-colors"
                 >
@@ -82,9 +100,17 @@ export function Contact() {
         <Reveal delay={0.1}>
           <form onSubmit={onSubmit} className="glass rounded-3xl p-7 md:p-9 space-y-5" noValidate>
             <Field label="Name" name="name" error={errors.name} placeholder="Jane Cooper" />
-            <Field label="Email" name="email" type="email" error={errors.email} placeholder="jane@brand.com" />
+            <Field
+              label="Email"
+              name="email"
+              type="email"
+              error={errors.email}
+              placeholder="jane@brand.com"
+            />
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+              <label htmlFor="message" className="block text-sm font-medium mb-2">
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -99,7 +125,13 @@ export function Contact() {
               disabled={loading}
               className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-gradient-brand px-7 py-3.5 font-semibold text-white glow-brand transition-transform hover:scale-[1.01] disabled:opacity-60"
             >
-              {loading ? "Sending…" : (<>Send Message <Send className="h-4 w-4" /></>)}
+              {loading ? (
+                "Sending…"
+              ) : (
+                <>
+                  Send Message <Send className="h-4 w-4" />
+                </>
+              )}
             </button>
           </form>
         </Reveal>
@@ -108,12 +140,24 @@ export function Contact() {
   );
 }
 
-function Field({ label, name, error, type = "text", placeholder }: {
-  label: string; name: string; error?: string; type?: string; placeholder?: string;
+function Field({
+  label,
+  name,
+  error,
+  type = "text",
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  error?: string;
+  type?: string;
+  placeholder?: string;
 }) {
   return (
     <div>
-      <label htmlFor={name} className="block text-sm font-medium mb-2">{label}</label>
+      <label htmlFor={name} className="block text-sm font-medium mb-2">
+        {label}
+      </label>
       <input
         id={name}
         name={name}
