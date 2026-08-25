@@ -1,4 +1,4 @@
-export const config = { runtime: "nodejs20.x" };
+export const config = { runtime: "nodejs" };
 
 let handlerPromise;
 function getHandler() {
