@@ -3,7 +3,10 @@ const UPLOADS_URL = import.meta.env.VITE_BLOG_UPLOADS_URL || "http://localhost:5
 const TENANT = import.meta.env.VITE_BLOG_TENANT || "digital-spark";
 
 export function getBlogImageUrl(image: string | null) {
-  return image ? `${UPLOADS_URL}/${image}` : null;
+  if (!image) return null;
+  // New uploads store a full Supabase Storage URL; older posts (uploaded
+  // before the switch from local disk) still have a bare filename.
+  return /^https?:\/\//.test(image) ? image : `${UPLOADS_URL}/${image}`;
 }
 
 export interface BlogAuthor {
